@@ -1,0 +1,11 @@
+// We are using a single codebase to manage multiple (dev, test & prod) workspaces, hence we call the workspaces using a name prefix.
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "rg-custom-roles"
+    storage_account_name = "azurecustomrolestfstate"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
+  }
+}
+
+
